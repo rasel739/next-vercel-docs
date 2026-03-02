@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 50">
+  <polygon points="25,5 45,45 5,45" fill="#3291FF"/>
+  <text x="55" y="37" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="700" fill="#F9FAFB">
+    Next.js + Vercel Guide
+  </text>
+</svg>

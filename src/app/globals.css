@@ -1,26 +1,97 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@custom-variant dark (&:is(.dark *));
+
+html,
+main {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@theme {
+  --color-primary: #0f7ed9;
+  --color-secondary: #5e696e;
+  --color-smokyBlack: #131516;
+  --color-paleSlate: #f6f8f9;
+  --color-charcoalDark: #2f3037;
+
+  --shadow-header_shadow: 0px 8px 8px -4px #13151606;
+}
+
+@layer utilities {
+  .container {
+    @apply w-full max-w-306 mx-auto mt-0 mb-0 py-0 sm:px-7 px-5;
+  }
+
+  .btn-gradient {
+    @apply rounded-full bg-linear-to-b from-[#419CE6] to-[#0F7ED9] hover:bg-linear-to-t hover:from-[#419CE6] hover:to-[#0F7ED9];
+  }
+
+  .docs-content h1 {
+    @apply text-smokyBlack dark:text-white font-bold mb-6 mt-8;
+  }
+
+  .docs-content h2 {
+    @apply text-smokyBlack dark:text-white font-bold mb-6 mt-8;
+  }
+
+  .docs-content h3 {
+    @apply text-smokyBlack dark:text-white font-bold mb-6 mt-8;
+  }
+
+  .docs-content h5 {
+    @apply text-smokyBlack dark:text-white font-bold mb-4 mt-4 sm:mt-9;
+  }
+
+  .docs-content h6 {
+    @apply text-smokyBlack dark:text-white font-bold mb-4 mt-9;
+  }
+
+  .docs-content p {
+    @apply text-smokyBlack dark:text-white/70 mb-3.5 mt-2;
+  }
+
+  code {
+    @apply bg-paleSlate dark:bg-charcoalDark py-0.5 px-1.5 rounded-xl border border-smokyBlack/10;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  h1 {
+    @apply text-3xl sm:text-4xl lg:text-5xl font-bold font-sans;
+  }
+
+  h2 {
+    @apply text-[28px] sm:text-3xl lg:text-4xl font-bold;
+  }
+
+  h3 {
+    @apply text-3xl;
+  }
+
+  h4 {
+    @apply text-[28px];
+  }
+
+  h5 {
+    @apply text-[18px] sm:text-xl lg:text-2xl font-normal;
+  }
+
+  h6 {
+    @apply text-base sm:text-lg;
+  }
+
+  p {
+    @apply text-smokyBlack dark:text-white text-base font-normal;
+  }
 }

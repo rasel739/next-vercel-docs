@@ -7,11 +7,11 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/docs',
-        destination: 'https://nextjs-vercel-docs.mintlify.dev/docs',
+        destination: `${process.env.MINTLIFY_DOCS_URL}/docs`,
       },
       {
         source: '/docs/:match*',
-        destination: 'https://nextjs-vercel-docs.mintlify.dev/docs/:match*',
+        destination: `${process.env.MINTLIFY_DOCS_URL}/docs/:match*`,
       },
     ];
   },
